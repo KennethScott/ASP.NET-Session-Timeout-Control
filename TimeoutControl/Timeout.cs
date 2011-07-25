@@ -13,25 +13,22 @@ namespace AjaxControls
     {
         #region Properties
         [Category("Behavior")]
-        [DefaultValue(20)]
         [Description("Idle minutes until the user's session will time out")]
         public float TimeoutMinutes
         {
-            get { return ViewState["TimeoutMinutes"] as float? ?? 20; }
+            get { return ViewState["TimeoutMinutes"] as float? ?? HttpContext.Current.Session.Timeout; }
             set { ViewState["TimeoutMinutes"] = value; }
         }
 
         [Category("Behavior")]
-        [DefaultValue(19)]
         [Description("Idle minutes until the user is informed that their session is about to time out")]
         public float AboutToTimeoutMinutes
         {
-            get { return ViewState["AboutToTimeoutMinutes"] as float? ?? 19; }
+            get { return ViewState["AboutToTimeoutMinutes"] as float? ?? this.TimeoutMinutes - 1; }
             set { ViewState["AboutToTimeoutMinutes"] = value; }
         }
 
         [Category("Behavior")]
-        [DefaultValue("")]
         [UrlProperty]
         [Description("URL to redirect the user, in the event of `session timeout")]
         public string TimeoutUrl
@@ -40,9 +37,8 @@ namespace AjaxControls
             set { ViewState["TimeoutUrl"] = value; }
         }
 
-        [Description("Span Id to display countdown timer in."),
-        Category("Behavior"),
-        DefaultValue("")]
+        [Description("Span Id to display countdown timer in.")]
+        [Category("Behavior")]
         public string CountDownSpanId
         {
             get { return ViewState["CountDownSpanId"] as string ?? String.Empty; }

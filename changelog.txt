@@ -1,0 +1,13 @@
+1.1
+---
+* Default the TimeoutMinutes to HttpContext.Current.Session.Timeout
+* Default the AboutToTimeoutMinutes to TimeoutMinutes - 1
+* Add changelog.txt
+
+1.0
+---
+* Initial release of reworked control.  
+* jQuery and jQuery UI now required.
+* Countdown timer no longer optional
+* Partial postbacks now always reset (no longer optional)
+* New public reset() method that can be called from outside the control if needed

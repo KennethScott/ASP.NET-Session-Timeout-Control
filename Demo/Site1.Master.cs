@@ -9,6 +9,7 @@ namespace Demo
 {
     public partial class Site1 : System.Web.UI.MasterPage
     {
+        // this could be used to disable the control from a content page
         public bool TimeoutControlEnabled
         {
             get { return Timeout1.Enabled; }
@@ -17,8 +18,9 @@ namespace Demo
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            Timeout1.TimeoutMinutes = HttpContext.Current.Session.Timeout;
-            Timeout1.AboutToTimeoutMinutes = Timeout1.TimeoutMinutes - 1;
+            // no longer required as these are now the default values of the control.
+            //Timeout1.TimeoutMinutes = HttpContext.Current.Session.Timeout;
+            //Timeout1.AboutToTimeoutMinutes = Timeout1.TimeoutMinutes - 1;
         }
     }
 }
