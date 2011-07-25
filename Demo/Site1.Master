@@ -1,0 +1,66 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="Demo.Site1" %>
+<%@ Register Assembly="AjaxControls" Namespace="AjaxControls" TagPrefix="ctl" %>
+
+<!DOCTYPE html>
+
+<html>
+
+<head runat="server">
+    <title>Timeout Demo</title>
+    <link href="Styles/Site.css" rel="stylesheet" type="text/css" />
+    <link href="Content/themes/base/minified/jquery.ui.all.min.css" type="text/css" rel="stylesheet" />    
+</head>
+<body>
+
+    <script type="text/javascript" src="Scripts/jquery-1.6.2.min.js"></script>
+    <script type="text/javascript" src="Scripts/jquery-ui-1.8.14.min.js"></script>
+
+    <form runat="server">
+
+        <asp:ScriptManager ID="sm1" runat="server">
+        </asp:ScriptManager>
+
+        <div class="page">
+            <div class="header">
+                <div class="title">
+                    <h1>
+                        Timeout Demo
+                    </h1>
+                </div>
+                <div class="clear hideSkiplink">
+                    <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal">
+                        <Items>
+                            <asp:MenuItem NavigateUrl="#" Text="Home"/>
+                            <asp:MenuItem NavigateUrl="#" Text="About"/>
+                        </Items>
+                    </asp:Menu>
+                </div>
+            </div>
+            <div class="main">
+                <asp:ContentPlaceHolder ID="ph1" runat="server"/>        
+                    <p>
+                        <%= String.Format("Timeout Warning Popup will display in {0} minute(s).", Timeout1.AboutToTimeoutMinutes) %>
+                    </p>
+            </div>
+            <div class="clear">
+            </div>
+        </div>
+                                                                        
+        <ctl:Timeout ID="Timeout1" runat="server" title="Session Expiring" TimeoutUrl="~/TimeOut.aspx" CountDownSpanId="countDown1" >
+            <Template>                                      
+                <p>
+                    <span class="ui-icon ui-icon-alert" style="float:left; margin: 1px 10px 20px 0;"></span>
+                    Your session is about to Expire.
+                </p>
+                <span id="countDown1"></span>
+                <p style="margin-left: 25px;">Click <b>OK</b> to continue your session.</p>                 
+            </Template>
+        </ctl:Timeout>  
+
+        <div class="footer">  
+            Kenneth Scott              
+        </div>
+
+    </form>
+</body>
+</html>
