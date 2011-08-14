@@ -5,7 +5,7 @@ AjaxControls.Timeout = function (element) {
     AjaxControls.Timeout.initializeBase(this, [element]);
 
     // self reference
-    var parent = this;
+    var myself = this;
     // countdown
     var countDownSeconds = null;
     var countDownDelegate = null;
@@ -14,17 +14,17 @@ AjaxControls.Timeout = function (element) {
     var timerAboutToTimeout = null;
     var timerCountDown = null;
     // properties
-    var timeoutMinutes = null;
-    var aboutToTimeoutMinutes = null;
-    var timeoutUrl = null;
-    var clientId = null;
-    var countDownSpanId = null;
+    this._timeoutMinutes = null;
+    this._aboutToTimeoutMinutes = null;
+    this._timeoutUrl = null;
+    this._clientId = null;
+    this._countDownSpanId = null;
 
     function countDown(e) {
         // countDownSeconds was computed originally in showDialog
         var secs = countDownSeconds % 60;
         // we want to format it as minutes : seconds
-        $('#' + countDownSpanId).text((parseInt(countDownSeconds / 60)) + ':' + ((secs < 10) ? '0' + secs : secs));
+        $('#' + myself._countDownSpanId).text((parseInt(countDownSeconds / 60)) + ':' + ((secs < 10) ? '0' + secs : secs));
 
         // subtract one and loop back here in 1 second
         countDownSeconds -= 1;
@@ -38,39 +38,37 @@ AjaxControls.Timeout = function (element) {
         clearTimeout(timerCountDown);
 
         // setup the timer that controls when the warning dialog appears
-        var showDialogDelegate = Function.createDelegate(parent, showDialog);
-        timerAboutToTimeout = setTimeout(showDialogDelegate, aboutToTimeoutMinutes * 60 * 1000);
+        var showDialogDelegate = Function.createDelegate(myself, showDialog);
+        timerAboutToTimeout = setTimeout(showDialogDelegate, myself._aboutToTimeoutMinutes * 60 * 1000);
         // setup the timer that controls when the redirect occurs (when session actually times out)
-        var timeoutDelegate = Function.createDelegate(parent, timeout);
-        timerTimeout = setTimeout(timeoutDelegate, timeoutMinutes * 60 * 1000);
+        var timeoutDelegate = Function.createDelegate(myself, timeout);
+        timerTimeout = setTimeout(timeoutDelegate, myself._timeoutMinutes * 60 * 1000);
     }
 
     function showDialog(e) {
-        // on open, the countdown will always start at exactly timeoutMinutes - aboutToTimeoutMinutes
-        countDownSeconds = ((timeoutMinutes - aboutToTimeoutMinutes) * 60) - 1;
-        $('#' + countDownSpanId).text((timeoutMinutes - aboutToTimeoutMinutes) + ':00');
+        // on open, the countdown will always start at exactly this._timeoutMinutes - this._aboutToTimeoutMinutes
+        countDownSeconds = ((myself._timeoutMinutes - myself._aboutToTimeoutMinutes) * 60) - 1;
+        $('#' + myself._countDownSpanId).text((myself._timeoutMinutes - myself._aboutToTimeoutMinutes) + ':00');
 
         // now start our countdown
-        countDownDelegate = Function.createDelegate(parent, countDown);
-        timerCountDown = setTimeout(countDownDelegate, 1000);
+        countDownDelegate = Function.createDelegate(myself, countDown);
+        myself._timerCountDown = setTimeout(countDownDelegate, 1000);
 
         // open the warning dialog and focus the window
-        $("#" + clientId).dialog('open');
+        myself.openDialog();
         window.focus();
     }
 
     function timeout(e) {
         // redirect to the specified timeout url
-        window.location = timeoutUrl;
+        window.location = myself._timeoutUrl;
     }
 
     // public functions
-    this.initialize = function () {
+    this.initialize = function() {
         // ensure requirements are met
         if (typeof jQuery == 'undefined')
             alert('Error:  jQuery not found.');
-        if (typeof jQuery.ui == 'undefined')
-            alert('Error:  jQuery UI not found.');
 
         AjaxControls.Timeout.callBaseMethod(this, 'initialize');
 
@@ -80,87 +78,106 @@ AjaxControls.Timeout = function (element) {
         this.initDialog();
     }
 
-    this.dispose = function () {
+    this.dispose = function() {
         $clearHandlers(this.get_element());
         AjaxControls.Timeout.callBaseMethod(this, 'dispose');
-    }
-
-    this.get_timeoutMinutes = function () {
-        return timeoutMinutes;
-    }
-
-    this.set_timeoutMinutes = function (value) {
-        if (timeoutMinutes !== value) {
-            timeoutMinutes = value;
-            this.raisePropertyChanged('timeoutMinutes');
-        }
-    }
-
-    this.get_aboutToTimeoutMinutes = function () {
-        return aboutToTimeoutMinutes;
-    }
-
-    this.set_aboutToTimeoutMinutes = function (value) {
-        if (aboutToTimeoutMinutes !== value) {
-            aboutToTimeoutMinutes = value;
-            this.raisePropertyChanged('aboutToTimeoutMinutes');
-        }
-    }
-
-    this.get_timeoutUrl = function () {
-        return timeoutUrl;
-    }
-
-    this.set_timeoutUrl = function (value) {
-        if (timeoutUrl !== value) {
-            timeoutUrl = value;
-            this.raisePropertyChanged('timeoutUrl');
-        }
-    }
-
-    this.get_clientId = function () {
-        return clientId;
-    }
-
-    this.set_clientId = function (value) {
-        if (clientId !== value) {
-            clientId = value;
-            this.raisePropertyChanged('clientId');
-        }
-    }
-
-    this.get_countDownSpanId = function () {
-        return countDownSpanId;
-    }
-
-    this.set_countDownSpanId = function (value) {
-        if (countDownSpanId !== value) {
-            countDownSpanId = value;
-            this.raisePropertyChanged('countDownSpanId');
-        }
-    }
-
-    // this is essentially the default dialog if not overriden
-    this.initDialog = function (e) {
-        var ctl = this;
-        $("#" + clientId).dialog({
-            autoOpen: false,
-            modal: true,
-            buttons: {
-                "Ok": function () {
-                    ctl.reset();
-                }
-            }
-        });
     }
 
     // publicly accessible in case you want to reset from outside the control - use $find('whateverid').reset()
     this.reset = function () {
         // make sure dialog is closed
-        $("#" + clientId).dialog('close');
+        this.closeDialog();
         // reset session and update timers
         CallServer();
         resetTimers();
+    }
+}
+
+AjaxControls.Timeout.prototype =
+{
+    get_timeoutMinutes: function () {
+        return this._timeoutMinutes;
+    },
+
+    set_timeoutMinutes: function (value) {
+        if (this._timeoutMinutes !== value) {
+            this._timeoutMinutes = value;
+            this.raisePropertyChanged('timeoutMinutes');
+        }
+    },
+
+    get_aboutToTimeoutMinutes: function () {
+        return this._aboutToTimeoutMinutes;
+    },
+
+    set_aboutToTimeoutMinutes: function (value) {
+        if (this._aboutToTimeoutMinutes !== value) {
+            this._aboutToTimeoutMinutes = value;
+            this.raisePropertyChanged('aboutToTimeoutMinutes');
+        }
+    },
+
+    get_timeoutUrl: function () {
+        return this._timeoutUrl;
+    },
+
+    set_timeoutUrl: function (value) {
+        if (this._timeoutUrl !== value) {
+            this._timeoutUrl = value;
+            this.raisePropertyChanged('timeoutUrl');
+        }
+    },
+
+    get_clientId: function () {
+        return this._clientId;
+    },
+
+    set_clientId: function (value) {
+        if (this._clientId !== value) {
+            this._clientId = value;
+            this.raisePropertyChanged('clientId');
+        }
+    },
+
+    get_countDownSpanId: function () {
+        return this._countDownSpanId;
+    },
+
+    set_countDownSpanId: function (value) {
+        if (this._countDownSpanId !== value) {
+            this._countDownSpanId = value;
+            this.raisePropertyChanged('countDownSpanId');
+        }
+    },
+
+    // this is the default dialog (override if not using jquery UI)
+    initDialog: function (e) {
+        var ctl = this;
+        if (typeof $("#" + this._clientId).dialog != 'undefined') {
+            $("#" + this._clientId).dialog({
+                autoOpen: false,
+                modal: true,
+                buttons: {
+                    "Ok": function () {
+                        ctl.reset();
+                    }
+                }
+            });
+        }
+    },
+
+    // close the dialog (override if not using jquery UI)
+    closeDialog: function () {
+        if (typeof $("#" + this._clientId).dialog != 'undefined') {
+            $("#" + this._clientId).dialog('close');
+        }
+    },
+
+    // open the dialog (override if not using jquery UI)
+    openDialog: function () {
+        if (typeof $("#" + this._clientId).dialog != 'undefined') {
+            $("#" + this._clientId).dialog('open');
+        }
     }
 }
 

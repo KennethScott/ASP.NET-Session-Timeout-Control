@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="WebForm1.aspx.cs" Inherits="Demo.WebForm1" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/jQueryUI.Master" AutoEventWireup="true" CodeBehind="jQueryUI.aspx.cs" Inherits="Demo.jQueryUI1" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ph1" runat="server">
 

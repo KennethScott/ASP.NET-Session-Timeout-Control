@@ -10,6 +10,6 @@
 namespace Demo {
     
     
-    public partial class WebForm1 {
+    public partial class ThickBox1 {
     }
 }

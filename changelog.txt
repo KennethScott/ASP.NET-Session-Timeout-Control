@@ -1,3 +1,9 @@
+1.2
+---
+* Reworked class to a mixture of closures + prototypes for maximum flexibility
+* jQuery UI no longer required (but is the default) as the control can work with any dialog window via overriden methods
+* Demos added for SimpleModal and ThickBox (in addition to existing jQueryUI demo)
+
 1.1
 ---
 * Default the TimeoutMinutes to HttpContext.Current.Session.Timeout

@@ -1,19 +1,19 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="Demo.Site1" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="SimpleModal.Master.cs" Inherits="Demo.SimpleModal" %>
 <%@ Register Assembly="AjaxControls" Namespace="AjaxControls" TagPrefix="ctl" %>
 
-<!DOCTYPE html>
+<!doctype html>
 
 <html>
 
 <head runat="server">
     <title>Timeout Demo</title>
     <link href="Styles/Site.css" rel="stylesheet" type="text/css" />
-    <link href="Content/themes/base/minified/jquery.ui.all.min.css" type="text/css" rel="stylesheet" />    
+    <link href="Styles/basic.css" type="text/css" rel="stylesheet" />    
 </head>
 <body>
 
     <script type="text/javascript" src="Scripts/jquery-1.6.2.min.js"></script>
-    <script type="text/javascript" src="Scripts/jquery-ui-1.8.14.min.js"></script>
+    <script type="text/javascript" src="Scripts/jquery.simplemodal.js"></script>
 
     <form runat="server">
 
@@ -24,7 +24,7 @@
             <div class="header">
                 <div class="title">
                     <h1>
-                        Timeout Demo
+                        Timeout Demo using <a href="http://www.ericmmartin.com/projects/simplemodal/">SimpleModal</a>
                     </h1>
                 </div>
                 <div class="clear hideSkiplink">
@@ -45,21 +45,25 @@
             <div class="clear">
             </div>
         </div>
-                                                                        
-        <ctl:Timeout ID="Timeout1" runat="server" title="Session Expiring" TimeoutUrl="~/TimeOut.aspx" CountDownSpanId="countDown1" >
-            <Template>                                      
-                <p>
-                    <span class="ui-icon ui-icon-alert" style="float:left; margin: 1px 10px 20px 0;"></span>
-                    Your session is about to Expire.
-                </p>
-                <span id="countDown1"></span>
-                <p style="margin-left: 25px;">Click <b>OK</b> to continue your session.</p>                 
-            </Template>
-        </ctl:Timeout>  
+                           
+        <!-- modal content -->
+		<div id="basic-modal-content">
+			<p>Your session is about to Expire.</p>
+            <span id="countDown1"></span>
+            <p>Click <a href="#" onclick="$find('Timeout1').reset();">OK</a> to continue your session.</p>
+		</div>                                             
+        <ctl:Timeout ID="Timeout1" runat="server" title="Session Expiring" TimeoutUrl="~/TimeOut.aspx" CountDownSpanId="countDown1" />
 
         <div class="footer">  
             Kenneth Scott              
         </div>
+
+        <script type="text/javascript">
+            if (typeof AjaxControls != 'undefined') {   // (won't be here if disabled/invisible)
+                AjaxControls.Timeout.prototype.closeDialog = function () { $.modal.close(); }
+                AjaxControls.Timeout.prototype.openDialog = function () { $('#basic-modal-content').modal(); }
+            }
+        </script>
 
     </form>
 </body>

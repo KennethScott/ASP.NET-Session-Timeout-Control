@@ -11,21 +11,6 @@
         <div style="padding-top: 100px; text-align: center;">
             Timed Out
         </div>
-        <script type="text/javascript">
-            TEST = {};
-            TEST.myClass = function () {
-                this.Kenneth = "testing";
-                var parent = this;
-                function something() {
-                    alert(parent.Kenneth);
-                }
-                this.somepublic = function () {
-                    alert(this.Kenneth);
-                }
-            };
-            var xxx = new TEST.myClass();
-            //xxx.somepublic();
-        </script>
     </form>
 </body>
 </html>

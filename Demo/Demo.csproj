@@ -107,12 +107,24 @@
     <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="jQueryUI.aspx" />
+    <Content Include="ThickBox.aspx" />
+    <Content Include="Scripts\images\bevel.in.svg" />
+    <Content Include="Scripts\images\bevel.out.svg" />
+    <Content Include="Scripts\images\reflect.svg" />
+    <Content Include="Scripts\jquery.simplemodal.js" />
+    <Content Include="Scripts\thickbox-compressed.js" />
+    <Content Include="SimpleModal.aspx" />
     <Content Include="Scripts\jquery-1.6.2-vsdoc.js" />
     <Content Include="Scripts\jquery-1.6.2.js" />
     <Content Include="Scripts\jquery-1.6.2.min.js" />
     <Content Include="Scripts\jquery-ui-1.8.14.js" />
     <Content Include="Scripts\jquery-ui-1.8.14.min.js" />
+    <Content Include="Styles\basic.css" />
+    <Content Include="Styles\img\loadingAnimation.gif" />
+    <Content Include="Styles\img\x.png" />
     <Content Include="Styles\Site.css" />
+    <Content Include="Styles\thickbox.css" />
     <Content Include="TimeOut.aspx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -121,17 +133,51 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
-    <Content Include="WebForm1.aspx" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Site1.Master.cs">
-      <DependentUpon>Site1.Master</DependentUpon>
+    <Compile Include="jQueryUI.aspx.cs">
+      <DependentUpon>jQueryUI.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Site1.Master.designer.cs">
-      <DependentUpon>Site1.Master</DependentUpon>
+    <Compile Include="jQueryUI.aspx.designer.cs">
+      <DependentUpon>jQueryUI.aspx</DependentUpon>
     </Compile>
+    <Compile Include="jQueryUI.Master.cs">
+      <DependentUpon>jQueryUI.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="jQueryUI.Master.designer.cs">
+      <DependentUpon>jQueryUI.Master</DependentUpon>
+    </Compile>
+    <Compile Include="ThickBox.aspx.cs">
+      <DependentUpon>ThickBox.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ThickBox.aspx.designer.cs">
+      <DependentUpon>ThickBox.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ThickBox.Master.cs">
+      <DependentUpon>ThickBox.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ThickBox.Master.designer.cs">
+      <DependentUpon>ThickBox.Master</DependentUpon>
+    </Compile>
+    <Compile Include="SimpleModal.aspx.cs">
+      <DependentUpon>SimpleModal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SimpleModal.aspx.designer.cs">
+      <DependentUpon>SimpleModal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SimpleModal.Master.cs">
+      <DependentUpon>SimpleModal.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SimpleModal.Master.designer.cs">
+      <DependentUpon>SimpleModal.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TimeOut.aspx.cs">
       <DependentUpon>TimeOut.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -139,16 +185,6 @@
     <Compile Include="TimeOut.aspx.designer.cs">
       <DependentUpon>TimeOut.aspx</DependentUpon>
     </Compile>
-    <Compile Include="WebForm1.aspx.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="WebForm1.aspx.designer.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Site1.Master" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -158,6 +194,15 @@
       <Project>{B5471EE5-0272-4831-A5E5-343C5661FEBC}</Project>
       <Name>AjaxControls</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SimpleModal.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ThickBox.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="jQueryUI.Master" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
