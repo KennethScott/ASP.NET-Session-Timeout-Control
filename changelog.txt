@@ -2,7 +2,7 @@
 ---
 * Reworked class to a mixture of closures + prototypes for maximum flexibility
 * jQuery UI no longer required (but is the default) as the control can work with any dialog window via overriden methods
-* Demos added for SimpleModal and ThickBox (in addition to existing jQueryUI demo)
+* Demos added for SimpleModal, ThickBox, and Div (in addition to existing jQueryUI demo)
 
 1.1
 ---

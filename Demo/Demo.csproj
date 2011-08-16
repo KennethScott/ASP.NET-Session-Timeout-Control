@@ -107,6 +107,7 @@
     <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="Div.aspx" />
     <Content Include="jQueryUI.aspx" />
     <Content Include="ThickBox.aspx" />
     <Content Include="Scripts\images\bevel.in.svg" />
@@ -135,6 +136,20 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Div.aspx.cs">
+      <DependentUpon>Div.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Div.aspx.designer.cs">
+      <DependentUpon>Div.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Div.Master.cs">
+      <DependentUpon>Div.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Div.Master.designer.cs">
+      <DependentUpon>Div.Master</DependentUpon>
+    </Compile>
     <Compile Include="jQueryUI.aspx.cs">
       <DependentUpon>jQueryUI.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -203,6 +218,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="jQueryUI.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Div.Master" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
