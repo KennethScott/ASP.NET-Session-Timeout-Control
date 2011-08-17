@@ -60,8 +60,8 @@
 
         <script type="text/javascript">
             if (typeof AjaxControls != 'undefined') {   // (won't be here if disabled/invisible)
-                AjaxControls.Timeout.prototype.closeDialog = function () { $.modal.close(); }
-                AjaxControls.Timeout.prototype.openDialog = function () { $('#basic-modal-content').modal(); }
+                AjaxControls.Timeout.prototype.hide = function () { $.modal.close(); }
+                AjaxControls.Timeout.prototype.show = function () { $('#basic-modal-content').modal(); }
             }
         </script>
 

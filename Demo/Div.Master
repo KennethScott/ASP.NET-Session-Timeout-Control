@@ -56,8 +56,8 @@
 
         <script type="text/javascript">
             if (typeof AjaxControls != 'undefined') {   // (won't be here if disabled/invisible)
-                AjaxControls.Timeout.prototype.closeDialog = function () { $('#'+this.get_clientId()).hide(); }
-                AjaxControls.Timeout.prototype.openDialog  = function () { $('#'+this.get_clientId()).show(); }
+                AjaxControls.Timeout.prototype.hide = function () { $('#'+this.get_clientId()).hide(); }
+                AjaxControls.Timeout.prototype.show  = function () { $('#'+this.get_clientId()).show(); }
             }
         </script>
 

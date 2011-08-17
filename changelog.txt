@@ -1,3 +1,11 @@
+1.3
+---
+* Reworked class (again) trying to expose *only* relevant properties and methods
+* Removed all references to "dialog" as control now works with any element based mechanism
+* Exposed the timeout method (for situations where you need to do more than just redirect)
+* Renamed the public methods for clarity.  'showDialog' now 'show';  'hideDialog' now 'hide';  'initDialog' now 'setup';
+* Added ColorBox demo
+
 1.2
 ---
 * Reworked class to a mixture of closures + prototypes for maximum flexibility

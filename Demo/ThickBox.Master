@@ -46,10 +46,10 @@
             </div>
         </div>
                                   
-        <input id="showPopup" alt="#TB_inline?height=300&width=400&inlineId=popupWindow" title="Session Expiring" 
-                style="display: none;" class="thickbox" type="button" />  
+        <input id="showPopup" alt="#TB_inline?height=150&width=250&inlineId=popupWindow" title="Session Expiring" 
+                style="display: none;" class="thickbox" type="button" onclick="return false;" />  
                                               
-        <ctl:Timeout ID="Timeout1" runat="server" title="Session Expiring" TimeoutUrl="~/TimeOut.aspx" CountDownSpanId="countDown1" >
+        <ctl:Timeout ID="Timeout1" runat="server" title="Session Expiring" TimeoutUrl="~/TimeOut.aspx" CountDownSpanId="countDown1">
             <Template>                                      
                 <div id='popupWindow'>
                     <p>Your session is about to Expire.</p>
@@ -61,8 +61,8 @@
 
         <script type="text/javascript">
             if (typeof AjaxControls != 'undefined') {   // (won't be here if disabled/invisible)
-                AjaxControls.Timeout.prototype.closeDialog = function () { tb_remove(); }
-                AjaxControls.Timeout.prototype.openDialog = function () { $('#showPopup').click(); }
+                AjaxControls.Timeout.prototype.hide = function () { tb_remove(); }
+                AjaxControls.Timeout.prototype.show = function () { $('#showPopup').click(); }
             }
         </script>
 

@@ -107,8 +107,24 @@
     <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="ColorBox.aspx" />
     <Content Include="Div.aspx" />
     <Content Include="jQueryUI.aspx" />
+    <Content Include="Scripts\jquery.colorbox-min.js" />
+    <Content Include="Styles\colorbox.css" />
+    <Content Include="Styles\images\border.png" />
+    <Content Include="Styles\images\controls.png" />
+    <Content Include="Styles\images\ie6\borderBottomCenter.png" />
+    <Content Include="Styles\images\ie6\borderBottomLeft.png" />
+    <Content Include="Styles\images\ie6\borderBottomRight.png" />
+    <Content Include="Styles\images\ie6\borderMiddleLeft.png" />
+    <Content Include="Styles\images\ie6\borderMiddleRight.png" />
+    <Content Include="Styles\images\ie6\borderTopCenter.png" />
+    <Content Include="Styles\images\ie6\borderTopLeft.png" />
+    <Content Include="Styles\images\ie6\borderTopRight.png" />
+    <Content Include="Styles\images\loading.gif" />
+    <Content Include="Styles\images\loading_background.png" />
+    <Content Include="Styles\images\overlay.png" />
     <Content Include="ThickBox.aspx" />
     <Content Include="Scripts\images\bevel.in.svg" />
     <Content Include="Scripts\images\bevel.out.svg" />
@@ -122,7 +138,7 @@
     <Content Include="Scripts\jquery-ui-1.8.14.js" />
     <Content Include="Scripts\jquery-ui-1.8.14.min.js" />
     <Content Include="Styles\basic.css" />
-    <Content Include="Styles\img\loadingAnimation.gif" />
+    <Content Include="Scripts\images\loadingAnimation.gif" />
     <Content Include="Styles\img\x.png" />
     <Content Include="Styles\Site.css" />
     <Content Include="Styles\thickbox.css" />
@@ -136,6 +152,20 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ColorBox.aspx.cs">
+      <DependentUpon>ColorBox.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ColorBox.aspx.designer.cs">
+      <DependentUpon>ColorBox.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ColorBox.Master.cs">
+      <DependentUpon>ColorBox.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ColorBox.Master.designer.cs">
+      <DependentUpon>ColorBox.Master</DependentUpon>
+    </Compile>
     <Compile Include="Div.aspx.cs">
       <DependentUpon>Div.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -221,6 +251,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Div.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ColorBox.Master" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

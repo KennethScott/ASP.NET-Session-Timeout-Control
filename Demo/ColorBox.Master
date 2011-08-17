@@ -1,22 +1,21 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="jQueryUI.master.cs" Inherits="Demo.jQueryUI" %>
-
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="ColorBox.Master.cs" Inherits="Demo.ColorBox" %>
 <%@ Register Assembly="AjaxControls" Namespace="AjaxControls" TagPrefix="ctl" %>
 
-<!DOCTYPE html>
+<!doctype html>
 
 <html>
 
-<head id="Head1" runat="server">
+<head runat="server">
     <title>Timeout Demo</title>
     <link href="Styles/Site.css" rel="stylesheet" type="text/css" />
-    <link href="Content/themes/base/minified/jquery.ui.all.min.css" type="text/css" rel="stylesheet" />    
+    <link href="Styles/colorbox.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 
     <script type="text/javascript" src="Scripts/jquery-1.6.2.min.js"></script>
-    <script type="text/javascript" src="Scripts/jquery-ui-1.8.14.min.js"></script>
+    <script src="Scripts/jquery.colorbox-min.js" type="text/javascript"></script>
 
-    <form id="Form1" runat="server">
+    <form id="myForm" runat="server">
 
         <asp:ScriptManager ID="sm1" runat="server">
         </asp:ScriptManager>
@@ -25,7 +24,7 @@
             <div class="header">
                 <div class="title">
                     <h1>
-                        Timeout Demo using <a href="http://jqueryui.com/">jQuery UI</a>
+                        Timeout Demo using <a href="http://colorpowered.com/colorbox/">ColorBox</a>
                     </h1>
                 </div>
                 <div class="clear hideSkiplink">
@@ -46,17 +45,23 @@
             <div class="clear">
             </div>
         </div>
-                                                                        
-        <ctl:Timeout ID="Timeout1" runat="server" title="Session Expiring" TimeoutUrl="~/TimeOut.aspx" CountDownSpanId="countDown1">
+                                                             
+        <ctl:Timeout ID="Timeout1" runat="server" title="Session Expiring" TimeoutUrl="~/TimeOut.aspx" CountDownSpanId="countDown1" >
             <Template>                                      
-                <p>
-                    <span class="ui-icon ui-icon-alert" style="float:left; margin: 1px 10px 20px 0;"></span>
-                    Your session is about to Expire.
-                </p>
-                <span id="countDown1"></span>
-                <p style="margin-left: 25px;">Click <b>OK</b> to continue your session.</p>                 
+                <div id='popupWindow'>
+                    <p>Your session is about to Expire.</p>
+                    <span id="countDown1"></span>
+                    <p>Click <a href="#" onclick="$find('Timeout1').reset();">OK</a> to continue your session.</p>                 
+                </div>
             </Template>
         </ctl:Timeout>  
+
+        <script type="text/javascript">
+            if (typeof AjaxControls != 'undefined') {   // (won't be here if disabled/invisible)
+                AjaxControls.Timeout.prototype.hide = function () { $.colorbox.close(); }
+                AjaxControls.Timeout.prototype.show = function () { $.colorbox({ inline: true, href: "#popupWindow", close: "" }); }
+            }
+        </script>
 
         <div class="footer">  
             Kenneth Scott              
