@@ -27,21 +27,23 @@ CountDownSpanId       - The span element to show the countdown timer in.
 
 
 
-For using with other notification mechanisms there are 4 key public clientside methods available on the control:
+For using with other notification mechanisms there are 5 key public clientside methods available on the control:
 
-initDialog()  - used for any one-time initialization/configuration that may be required by your notification mechanism
+setup()       - used for any one-time setup/configuration that may be needed by your notification mechanism
 
-openDialog()  - used to tell the control how to fire your notification to the user
+show()        - show the notification to the user
 
-closeDialog() - used to tell the control how to end your notification to the user
+hide()        - hide the notification from the user
 
-reset()       - called by the user to extend their session (also ends the notification, resets timers, etc)
+reset()       - called by the user to extend their session (also hides the notification, resets timers, etc)
 
+timeout()     - occurs upon session timeout.  Redirects by default.
 
 Examples in the included project demonstrate using the control with:
 jQuery UI Dialog
 SimpleModal
 ThickBox
+ColorBox
 Div
 (more coming soon)
 
