@@ -11,5 +11,17 @@ namespace Demo {
     
     
     public partial class SimpleModal1 {
+        
+        /// <summary>
+        /// Master property.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated property.
+        /// </remarks>
+        public new Demo.SimpleModal Master {
+            get {
+                return ((Demo.SimpleModal)(base.Master));
+            }
+        }
     }
 }

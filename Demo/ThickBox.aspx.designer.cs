@@ -11,5 +11,17 @@ namespace Demo {
     
     
     public partial class ThickBox1 {
+        
+        /// <summary>
+        /// Master property.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated property.
+        /// </remarks>
+        public new Demo.ThickBox Master {
+            get {
+                return ((Demo.ThickBox)(base.Master));
+            }
+        }
     }
 }

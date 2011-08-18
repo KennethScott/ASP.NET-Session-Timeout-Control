@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SimpleModal.Master" AutoEventWireup="true" CodeBehind="SimpleModal.aspx.cs" Inherits="Demo.SimpleModal1" %>
+<%@ MasterType VirtualPath="~/SimpleModal.Master" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ph1" runat="server">
 

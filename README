@@ -9,7 +9,8 @@ mixture of client and serverside properties and methods.  The control requires j
 but can work with any desired notification mechanism such as a simple element or a modal dialog.
 
 By default the control works with the jQuery UI Dialog and whatever jQuery UI theme you have installed - and can be 
-implemented with absolutely no coding.  User notification defaults to your site's Session Timeout minus one minute.  
+implemented with absolutely no coding.  User notification defaults to your site's Session Timeout minus one minute.
+Note that Session Timeout is set using the standard .NET sessionState tag in the web.config.
 
 The control is template based and you can layout your desired notification interface within the template or it 
 may exist elsewhere on the page.

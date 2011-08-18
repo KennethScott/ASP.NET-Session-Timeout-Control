@@ -11,5 +11,17 @@ namespace Demo {
     
     
     public partial class Div1 {
+        
+        /// <summary>
+        /// Master property.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated property.
+        /// </remarks>
+        public new Demo.Div Master {
+            get {
+                return ((Demo.Div)(base.Master));
+            }
+        }
     }
 }

@@ -150,6 +150,7 @@ AjaxControls.Timeout = function (element) {
     }
 }
 
+// overridable methods
 AjaxControls.Timeout.prototype =
 {
     // setup the notification (override if not using jquery UI)

@@ -38,7 +38,7 @@
             <div class="main">
                 <asp:ContentPlaceHolder ID="ph1" runat="server"/>        
                     <p>
-                        <%= String.Format("Timeout Warning Popup will display in {0} minute(s).", Timeout1.AboutToTimeoutMinutes) %>
+                        <%= String.Format("Timeout Warning Div will display below in {0} minute(s).", Timeout1.AboutToTimeoutMinutes) %>
                     </p>
                 <ctl:Timeout ID="Timeout1" runat="server" title="Session Expiring" TimeoutUrl="~/TimeOut.aspx" CountDownSpanId="countDown1">
                     <Template> 

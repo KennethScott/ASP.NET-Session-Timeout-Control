@@ -14,5 +14,11 @@ namespace Demo
             get { return Timeout1.Enabled; }
             set { Timeout1.Enabled = value; }
         }
+
+        // can be used to access the clientid from content pages
+        public string TimeoutControlClientId
+        {
+            get { return Timeout1.ClientID; }
+        }
     }
 }

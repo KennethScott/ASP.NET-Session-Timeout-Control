@@ -1,3 +1,9 @@
+1.4
+---
+* Added TimeoutControlClientId public property to all Master pages and added MasterType declarations to all content pages
+* Modified Div pages to demonstrate using the new TimeoutControlClientId property to reset the control externally from the content page
+  using both MS Ajax $find And jQuery examples.
+  
 1.3
 ---
 * Reworked class (again) trying to expose *only* relevant properties and methods

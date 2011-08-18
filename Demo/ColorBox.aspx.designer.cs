@@ -11,5 +11,17 @@ namespace Demo {
     
     
     public partial class ColorBox1 {
+        
+        /// <summary>
+        /// Master property.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated property.
+        /// </remarks>
+        public new Demo.ColorBox Master {
+            get {
+                return ((Demo.ColorBox)(base.Master));
+            }
+        }
     }
 }

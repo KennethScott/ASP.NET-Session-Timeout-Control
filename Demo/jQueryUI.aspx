@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/jQueryUI.Master" AutoEventWireup="true" CodeBehind="jQueryUI.aspx.cs" Inherits="Demo.jQueryUI1" %>
+<%@ MasterType VirtualPath="~/jQueryUI.Master" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ph1" runat="server">
 
@@ -8,5 +9,5 @@
     <p>
         To learn more about the Timeout control, visit <a href="http://programmerramblings.blogspot.com" title="Programmer Ramblings">Programmer Ramblings</a>.
     </p>  
-
+    
 </asp:Content>

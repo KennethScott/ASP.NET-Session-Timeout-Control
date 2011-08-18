@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/ColorBox.Master" AutoEventWireup="true" CodeBehind="ColorBox.aspx.cs" Inherits="Demo.ColorBox1" %>
+<%@ MasterType VirtualPath="~/ColorBox.Master" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ph1" runat="server">
 
