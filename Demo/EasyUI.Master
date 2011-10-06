@@ -1,0 +1,74 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="EasyUI.Master.cs" Inherits="Demo.EasyUI" %>
+
+<%@ Register Assembly="AjaxControls" Namespace="AjaxControls" TagPrefix="ctl" %>
+
+<!DOCTYPE html>
+
+<html>
+
+<head id="Head1" runat="server">
+    <title>Timeout Demo</title>
+    <link href="Styles/Site.css" rel="stylesheet" type="text/css" />
+    <link href="Scripts/themes/default/easyui.css" rel="stylesheet" type="text/css">    
+    <link href="Scripts/themes/icon.css" rel="stylesheet" type="text/css" >
+</head>
+<body>
+
+    <script type="text/javascript" src="Scripts/jquery-1.6.2.min.js"></script>
+    <script type="text/javascript" src="Scripts/jquery.easyui.min.js"></script>
+
+    <form id="Form1" runat="server">
+
+        <asp:ScriptManager ID="sm1" runat="server">
+        </asp:ScriptManager>
+
+        <div class="page">
+            <div class="header">
+                <div class="title">
+                    <h1>
+                        Timeout Demo using <a href="http://www.jeasyui.com">jQuery EasyUI</a>
+                    </h1>
+                </div>
+                <div class="clear hideSkiplink">
+                    <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal">
+                        <Items>
+                            <asp:MenuItem NavigateUrl="#" Text="Home"/>
+                            <asp:MenuItem NavigateUrl="#" Text="About"/>
+                        </Items>
+                    </asp:Menu>
+                </div>
+            </div>
+            <div class="main">
+                <asp:ContentPlaceHolder ID="ph1" runat="server"/>        
+                    <p>
+                        <%= String.Format("Timeout Warning Popup will display in {0} minute(s).", Timeout1.AboutToTimeoutMinutes) %>
+                    </p>
+            </div>
+            <div class="clear">
+            </div>
+        </div>
+                                                          
+        <ctl:Timeout ID="Timeout1" runat="server" TimeoutUrl="~/TimeOut.aspx" CountDownSpanId="countDown1">
+            <Template>
+                <div id="win" class="easyui-window" closed="true" modal="true" title="Session Expiring">
+            	    <p>Your session is about to Expire.</p>
+                    <span id="countDown1"></span>
+                    <p>Click <a href="#" onclick="$find('Timeout1').reset();">OK</a> to continue your session.</p>
+                </div>                
+            </Template>
+        </ctl:Timeout>
+
+        <div class="footer">  
+            Kenneth Scott              
+        </div>        
+        
+        <script type="text/javascript">
+            if (typeof AjaxControls != 'undefined') {   // (won't be here if disabled/invisible)
+                AjaxControls.Timeout.prototype.setup = function () { $('#win').window(); }
+                AjaxControls.Timeout.prototype.hide = function () { $('#win').window('close'); }
+                AjaxControls.Timeout.prototype.show = function () { $('#win').window('open'); }
+            }
+        </script>
+
+    </form>
+</body></html>

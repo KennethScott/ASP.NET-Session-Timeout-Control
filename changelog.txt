@@ -1,3 +1,7 @@
+1.5
+---
+* Added jQuery EasyUI demo
+
 1.4
 ---
 * Added TimeoutControlClientId public property to all Master pages and added MasterType declarations to all content pages

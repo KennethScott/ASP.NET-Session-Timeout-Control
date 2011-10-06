@@ -190,17 +190,20 @@ div.menu ul li a:active
 /* FORM ELEMENTS   
 ----------------------------------------------------------*/
 
+#region This is coolness
 fieldset
 {
     margin: 1em 0px;
     padding: 1em;
-    border: 1px solid #ccc;
+    border: 1px solid #4e667d;
 }
 
 fieldset p 
 {
     margin: 2px 12px 10px 10px;
 }
+
+#endregion
 
 fieldset.login label, fieldset.register label, fieldset.changePassword label
 {

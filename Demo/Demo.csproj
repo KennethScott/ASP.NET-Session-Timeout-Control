@@ -108,9 +108,116 @@
     <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
     <Content Include="ColorBox.aspx" />
+    <Content Include="EasyUI.aspx" />
     <Content Include="Div.aspx" />
     <Content Include="jQueryUI.aspx" />
     <Content Include="Scripts\jquery.colorbox-min.js" />
+    <Content Include="Scripts\jquery.easyui.min.js" />
+    <Content Include="Scripts\themes\default\accordion.css" />
+    <Content Include="Scripts\themes\default\calendar.css" />
+    <Content Include="Scripts\themes\default\combo.css" />
+    <Content Include="Scripts\themes\default\combobox.css" />
+    <Content Include="Scripts\themes\default\datagrid.css" />
+    <Content Include="Scripts\themes\default\datebox.css" />
+    <Content Include="Scripts\themes\default\dialog.css" />
+    <Content Include="Scripts\themes\default\easyui.css" />
+    <Content Include="Scripts\themes\default\images\accordion_collapse.png" />
+    <Content Include="Scripts\themes\default\images\accordion_expand.png" />
+    <Content Include="Scripts\themes\default\images\blank.gif" />
+    <Content Include="Scripts\themes\default\images\button_a_bg.gif" />
+    <Content Include="Scripts\themes\default\images\button_plain_hover.png" />
+    <Content Include="Scripts\themes\default\images\button_span_bg.gif" />
+    <Content Include="Scripts\themes\default\images\calendar_nextmonth.gif" />
+    <Content Include="Scripts\themes\default\images\calendar_nextyear.gif" />
+    <Content Include="Scripts\themes\default\images\calendar_prevmonth.gif" />
+    <Content Include="Scripts\themes\default\images\calendar_prevyear.gif" />
+    <Content Include="Scripts\themes\default\images\combo_arrow.gif" />
+    <Content Include="Scripts\themes\default\images\datagrid_header_bg.gif" />
+    <Content Include="Scripts\themes\default\images\datagrid_row_collapse.gif" />
+    <Content Include="Scripts\themes\default\images\datagrid_row_expand.gif" />
+    <Content Include="Scripts\themes\default\images\datagrid_sort_asc.gif" />
+    <Content Include="Scripts\themes\default\images\datagrid_sort_desc.gif" />
+    <Content Include="Scripts\themes\default\images\datagrid_title_bg.png" />
+    <Content Include="Scripts\themes\default\images\datebox_arrow.png" />
+    <Content Include="Scripts\themes\default\images\layout_button_down.gif" />
+    <Content Include="Scripts\themes\default\images\layout_button_left.gif" />
+    <Content Include="Scripts\themes\default\images\layout_button_right.gif" />
+    <Content Include="Scripts\themes\default\images\layout_button_up.gif" />
+    <Content Include="Scripts\themes\default\images\menu.gif" />
+    <Content Include="Scripts\themes\default\images\menu_downarrow.png" />
+    <Content Include="Scripts\themes\default\images\menu_rightarrow.png" />
+    <Content Include="Scripts\themes\default\images\menu_sep.png" />
+    <Content Include="Scripts\themes\default\images\menu_split_downarrow.png" />
+    <Content Include="Scripts\themes\default\images\messager_error.gif" />
+    <Content Include="Scripts\themes\default\images\messager_info.gif" />
+    <Content Include="Scripts\themes\default\images\messager_question.gif" />
+    <Content Include="Scripts\themes\default\images\messager_warning.gif" />
+    <Content Include="Scripts\themes\default\images\pagination_first.gif" />
+    <Content Include="Scripts\themes\default\images\pagination_last.gif" />
+    <Content Include="Scripts\themes\default\images\pagination_load.png" />
+    <Content Include="Scripts\themes\default\images\pagination_loading.gif" />
+    <Content Include="Scripts\themes\default\images\pagination_next.gif" />
+    <Content Include="Scripts\themes\default\images\pagination_prev.gif" />
+    <Content Include="Scripts\themes\default\images\panel_loading.gif" />
+    <Content Include="Scripts\themes\default\images\panel_title.png" />
+    <Content Include="Scripts\themes\default\images\panel_tools.gif" />
+    <Content Include="Scripts\themes\default\images\panel_tool_collapse.gif" />
+    <Content Include="Scripts\themes\default\images\panel_tool_expand.gif" />
+    <Content Include="Scripts\themes\default\images\searchbox_button.png" />
+    <Content Include="Scripts\themes\default\images\spinner_arrow_down.gif" />
+    <Content Include="Scripts\themes\default\images\spinner_arrow_up.gif" />
+    <Content Include="Scripts\themes\default\images\tabs_active.png" />
+    <Content Include="Scripts\themes\default\images\tabs_close.gif" />
+    <Content Include="Scripts\themes\default\images\tabs_enabled.png" />
+    <Content Include="Scripts\themes\default\images\tabs_leftarrow.png" />
+    <Content Include="Scripts\themes\default\images\tabs_rightarrow.png" />
+    <Content Include="Scripts\themes\default\images\tree_arrows.gif" />
+    <Content Include="Scripts\themes\default\images\tree_checkbox_0.gif" />
+    <Content Include="Scripts\themes\default\images\tree_checkbox_1.gif" />
+    <Content Include="Scripts\themes\default\images\tree_checkbox_2.gif" />
+    <Content Include="Scripts\themes\default\images\tree_dnd_no.png" />
+    <Content Include="Scripts\themes\default\images\tree_dnd_yes.png" />
+    <Content Include="Scripts\themes\default\images\tree_file.gif" />
+    <Content Include="Scripts\themes\default\images\tree_folder.gif" />
+    <Content Include="Scripts\themes\default\images\tree_folder_open.gif" />
+    <Content Include="Scripts\themes\default\images\tree_loading.gif" />
+    <Content Include="Scripts\themes\default\images\validatebox_pointer.gif" />
+    <Content Include="Scripts\themes\default\images\validatebox_warning.png" />
+    <Content Include="Scripts\themes\default\layout.css" />
+    <Content Include="Scripts\themes\default\linkbutton.css" />
+    <Content Include="Scripts\themes\default\menu.css" />
+    <Content Include="Scripts\themes\default\menubutton.css" />
+    <Content Include="Scripts\themes\default\messager.css" />
+    <Content Include="Scripts\themes\default\pagination.css" />
+    <Content Include="Scripts\themes\default\panel.css" />
+    <Content Include="Scripts\themes\default\progressbar.css" />
+    <Content Include="Scripts\themes\default\propertygrid.css" />
+    <Content Include="Scripts\themes\default\searchbox.css" />
+    <Content Include="Scripts\themes\default\spinner.css" />
+    <Content Include="Scripts\themes\default\splitbutton.css" />
+    <Content Include="Scripts\themes\default\tabs.css" />
+    <Content Include="Scripts\themes\default\tree.css" />
+    <Content Include="Scripts\themes\default\validatebox.css" />
+    <Content Include="Scripts\themes\default\window.css" />
+    <Content Include="Scripts\themes\icon.css" />
+    <Content Include="Scripts\themes\icons\back.png" />
+    <Content Include="Scripts\themes\icons\blank.gif" />
+    <Content Include="Scripts\themes\icons\cancel.png" />
+    <Content Include="Scripts\themes\icons\cut.png" />
+    <Content Include="Scripts\themes\icons\edit_add.png" />
+    <Content Include="Scripts\themes\icons\edit_remove.png" />
+    <Content Include="Scripts\themes\icons\filesave.png" />
+    <Content Include="Scripts\themes\icons\help.png" />
+    <Content Include="Scripts\themes\icons\no.png" />
+    <Content Include="Scripts\themes\icons\ok.png" />
+    <Content Include="Scripts\themes\icons\pencil.png" />
+    <Content Include="Scripts\themes\icons\print.png" />
+    <Content Include="Scripts\themes\icons\redo.png" />
+    <Content Include="Scripts\themes\icons\reload.png" />
+    <Content Include="Scripts\themes\icons\search.png" />
+    <Content Include="Scripts\themes\icons\sum.png" />
+    <Content Include="Scripts\themes\icons\tip.png" />
+    <Content Include="Scripts\themes\icons\undo.png" />
     <Content Include="Styles\colorbox.css" />
     <Content Include="Styles\images\border.png" />
     <Content Include="Styles\images\controls.png" />
@@ -165,6 +272,20 @@
     </Compile>
     <Compile Include="ColorBox.Master.designer.cs">
       <DependentUpon>ColorBox.Master</DependentUpon>
+    </Compile>
+    <Compile Include="EasyUI.aspx.cs">
+      <DependentUpon>EasyUI.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EasyUI.aspx.designer.cs">
+      <DependentUpon>EasyUI.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EasyUI.Master.cs">
+      <DependentUpon>EasyUI.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EasyUI.Master.designer.cs">
+      <DependentUpon>EasyUI.Master</DependentUpon>
     </Compile>
     <Compile Include="Div.aspx.cs">
       <DependentUpon>Div.aspx</DependentUpon>
@@ -254,6 +375,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ColorBox.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="EasyUI.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Scripts\themes\default\images\Thumbs.db" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
