@@ -1,3 +1,9 @@
+1.6
+---
+* Upgraded to jQuery 1.7 and jQuery UI 1.8.16
+* Added new content page jQueryUiMultipleDialogs which demonstrates having a jQuery UI modal dialog up and visible (with content from a separate
+  page) prior to the Timeout popup being shown (and redirecting).
+
 1.5
 ---
 * Added jQuery EasyUI demo

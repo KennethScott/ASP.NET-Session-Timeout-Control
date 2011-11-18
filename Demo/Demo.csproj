@@ -51,6 +51,7 @@
     <Reference Include="System.Web.ApplicationServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ColorBox.aspx" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -107,10 +108,15 @@
     <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
-    <Content Include="ColorBox.aspx" />
+    <Content Include="jQueryUiMultipleDialogs.aspx" />
     <Content Include="EasyUI.aspx" />
     <Content Include="Div.aspx" />
     <Content Include="jQueryUI.aspx" />
+    <Content Include="Scripts\jquery-1.7-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.7.js" />
+    <Content Include="Scripts\jquery-1.7.min.js" />
+    <Content Include="Scripts\jquery-ui-1.8.16.js" />
+    <Content Include="Scripts\jquery-ui-1.8.16.min.js" />
     <Content Include="Scripts\jquery.colorbox-min.js" />
     <Content Include="Scripts\jquery.easyui.min.js" />
     <Content Include="Scripts\themes\default\accordion.css" />
@@ -218,6 +224,7 @@
     <Content Include="Scripts\themes\icons\sum.png" />
     <Content Include="Scripts\themes\icons\tip.png" />
     <Content Include="Scripts\themes\icons\undo.png" />
+    <Content Include="StandalonePage.aspx" />
     <Content Include="Styles\colorbox.css" />
     <Content Include="Styles\images\border.png" />
     <Content Include="Styles\images\controls.png" />
@@ -239,11 +246,6 @@
     <Content Include="Scripts\jquery.simplemodal.js" />
     <Content Include="Scripts\thickbox-compressed.js" />
     <Content Include="SimpleModal.aspx" />
-    <Content Include="Scripts\jquery-1.6.2-vsdoc.js" />
-    <Content Include="Scripts\jquery-1.6.2.js" />
-    <Content Include="Scripts\jquery-1.6.2.min.js" />
-    <Content Include="Scripts\jquery-ui-1.8.14.js" />
-    <Content Include="Scripts\jquery-ui-1.8.14.min.js" />
     <Content Include="Styles\basic.css" />
     <Content Include="Scripts\images\loadingAnimation.gif" />
     <Content Include="Styles\img\x.png" />
@@ -272,6 +274,13 @@
     </Compile>
     <Compile Include="ColorBox.Master.designer.cs">
       <DependentUpon>ColorBox.Master</DependentUpon>
+    </Compile>
+    <Compile Include="jQueryUiMultipleDialogs.aspx.cs">
+      <DependentUpon>jQueryUiMultipleDialogs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="jQueryUiMultipleDialogs.aspx.designer.cs">
+      <DependentUpon>jQueryUiMultipleDialogs.aspx</DependentUpon>
     </Compile>
     <Compile Include="EasyUI.aspx.cs">
       <DependentUpon>EasyUI.aspx</DependentUpon>
@@ -315,6 +324,13 @@
     <Compile Include="jQueryUI.Master.designer.cs">
       <DependentUpon>jQueryUI.Master</DependentUpon>
     </Compile>
+    <Compile Include="StandalonePage.aspx.cs">
+      <DependentUpon>StandalonePage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StandalonePage.aspx.designer.cs">
+      <DependentUpon>StandalonePage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ThickBox.aspx.cs">
       <DependentUpon>ThickBox.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -353,9 +369,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\TimeoutControl\AjaxControls.csproj">
       <Project>{B5471EE5-0272-4831-A5E5-343C5661FEBC}</Project>
       <Name>AjaxControls</Name>
@@ -380,6 +393,7 @@
     <Content Include="EasyUI.Master" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="packages.config" />
     <None Include="Scripts\themes\default\images\Thumbs.db" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
