@@ -1,4 +1,5 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="jQueryUI.master.cs" Inherits="Demo.jQueryUI" %>
+<%@ Register Src="~/UserControls/NavigationMenu.ascx" TagPrefix="uc" TagName="NavigationMenu" %>
 
 <%@ Register Assembly="AjaxControls" Namespace="AjaxControls" TagPrefix="ctl" %>
 
@@ -29,12 +30,7 @@
                     </h1>
                 </div>
                 <div class="clear hideSkiplink">
-                    <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal">
-                        <Items>
-                            <asp:MenuItem NavigateUrl="#" Text="Home"/>
-                            <asp:MenuItem NavigateUrl="#" Text="About"/>
-                        </Items>
-                    </asp:Menu>
+                    <uc:NavigationMenu runat="server" ID="ucNavigationMenu" />
                 </div>
             </div>
             <div class="main">

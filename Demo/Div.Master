@@ -1,4 +1,6 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Div.Master.cs" Inherits="Demo.Div" %>
+<%@ Register Src="~/UserControls/NavigationMenu.ascx" TagPrefix="uc" TagName="NavigationMenu" %>
+<%@ Register Src="~/UserControls/jQuery.ascx" TagPrefix="uc" TagName="jQuery" %>
 
 <%@ Register Assembly="AjaxControls" Namespace="AjaxControls" TagPrefix="ctl" %>
 
@@ -11,8 +13,8 @@
     <link href="Styles/Site.css" rel="stylesheet" type="text/css" />  
 </head>
 <body>
-
-    <script type="text/javascript" src="Scripts/jquery-1.6.2.min.js"></script>
+    
+    <uc:jQuery runat="server" ID="ucjQuery" />    
 
     <form id="Form1" runat="server">
 
@@ -27,12 +29,7 @@
                     </h1>
                 </div>
                 <div class="clear hideSkiplink">
-                    <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal">
-                        <Items>
-                            <asp:MenuItem NavigateUrl="#" Text="Home"/>
-                            <asp:MenuItem NavigateUrl="#" Text="About"/>
-                        </Items>
-                    </asp:Menu>
+                    <uc:NavigationMenu runat="server" ID="ucNavigationMenu" />
                 </div>
             </div>
             <div class="main">

@@ -252,6 +252,8 @@
     <Content Include="Styles\Site.css" />
     <Content Include="Styles\thickbox.css" />
     <Content Include="TimeOut.aspx" />
+    <Content Include="UserControls\jQuery.ascx" />
+    <Content Include="UserControls\NavigationMenu.ascx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -366,6 +368,20 @@
     </Compile>
     <Compile Include="TimeOut.aspx.designer.cs">
       <DependentUpon>TimeOut.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\jQuery.ascx.cs">
+      <DependentUpon>jQuery.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\jQuery.ascx.designer.cs">
+      <DependentUpon>jQuery.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\NavigationMenu.ascx.cs">
+      <DependentUpon>NavigationMenu.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\NavigationMenu.ascx.designer.cs">
+      <DependentUpon>NavigationMenu.ascx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

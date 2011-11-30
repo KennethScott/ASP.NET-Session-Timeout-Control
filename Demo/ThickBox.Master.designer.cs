@@ -13,6 +13,15 @@ namespace Demo {
     public partial class ThickBox {
         
         /// <summary>
+        /// ucjQuery control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Demo.UserControls.jQuery ucjQuery;
+        
+        /// <summary>
         /// sm1 control.
         /// </summary>
         /// <remarks>
@@ -22,13 +31,13 @@ namespace Demo {
         protected global::System.Web.UI.ScriptManager sm1;
         
         /// <summary>
-        /// NavigationMenu control.
+        /// ucNavigationMenu control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Menu NavigationMenu;
+        protected global::Demo.UserControls.NavigationMenu ucNavigationMenu;
         
         /// <summary>
         /// ph1 control.
