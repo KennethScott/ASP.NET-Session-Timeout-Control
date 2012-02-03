@@ -27,6 +27,10 @@ TimeoutUrl            - The page to redirect to upon timeout.
 CountDownSpanId       - The span element to show the countdown timer in.
 
 
+Events:
+
+OnRaisingCallbackEvent - Runs when the control's callback fires.
+
 
 For using with other notification mechanisms there are 5 key public clientside methods available on the control:
 

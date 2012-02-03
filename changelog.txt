@@ -1,3 +1,8 @@
+1.8
+---
+* Added new event OnRaisingCallbackEvent that can be subscribed to for notification of when the control's callback fires.  Example implementation
+  on jQueryUI demo.
+
 1.7
 ---
 * Fixed bogus references to old jQuery 1.6.4

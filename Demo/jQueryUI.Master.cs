@@ -20,5 +20,11 @@ namespace Demo
         {
             get { return Timeout1.ClientID; }
         }
+
+        protected void Timeout1_RaisingCallbackEvent(object sender, EventArgs e)
+        {
+            // when the timeout control's callback is fired, this event will fire
+            string x = "";
+        }
     }
 }

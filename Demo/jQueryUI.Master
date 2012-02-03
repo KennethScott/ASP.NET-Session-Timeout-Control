@@ -43,7 +43,9 @@
             </div>
         </div>
                                                                         
-        <ctl:Timeout ID="Timeout1" runat="server" title="Session Expiring" TimeoutUrl="~/TimeOut.aspx" CountDownSpanId="countDown1">
+        <ctl:Timeout ID="Timeout1" runat="server" title="Session Expiring" 
+            TimeoutUrl="~/TimeOut.aspx" CountDownSpanId="countDown1" 
+            onraisingcallbackevent="Timeout1_RaisingCallbackEvent" >
             <Template>                                      
                 <p>
                     <span class="ui-icon ui-icon-alert" style="float:left; margin: 1px 10px 20px 0;"></span>

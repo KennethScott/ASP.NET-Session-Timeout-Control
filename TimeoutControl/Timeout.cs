@@ -94,9 +94,14 @@ namespace AjaxControls
             }
         }
 
+        public event EventHandler RaisingCallbackEvent;
+
         public void RaiseCallbackEvent(String eventArgument)
         {
-            // All we're doing here is resetting session.
+            // All we're doing here is resetting session, but we'll expose the event for subscribers.
+            var e = RaisingCallbackEvent;
+            if (e != null)
+                e(this, null);
         }
 
         public String GetCallbackResult()
