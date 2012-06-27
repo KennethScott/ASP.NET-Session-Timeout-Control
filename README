@@ -15,6 +15,10 @@ Note that Session Timeout is set using the standard .NET sessionState tag in the
 The control is template based and you can layout your desired notification interface within the template or it 
 may exist elsewhere on the page.
 
+The required timeout.js file is embedded in the control and by default is automatically sent to the client.  In cases where you'd
+rather serve the file your way (combined/minified/etc), you may disable the embedded copy by setting UseEmbeddedJavascript=false and 
+then either specifying the path to your timeout.js file in the JavascriptUrl property OR simply adding your own script tag to the page.
+
 Properties:
 
 TimeoutMinutes        - Minutes until the user's session will timeout.  Defaults to site's Session Timeout value.
@@ -25,6 +29,10 @@ AboutToTimeoutMinutes - Minutes until the user is notified that their session is
 TimeoutUrl            - The page to redirect to upon timeout.
 
 CountDownSpanId       - The span element to show the countdown timer in.
+
+UseEmbeddedJavascript - Controls whether the embedded timeout.js file is automatically sent to the client.  Defaults to true.
+
+JavascriptUrl		  - Optionally specifies the location of the timeout.js file (if not using the embedded version).  Defaults to "".
 
 
 Events:

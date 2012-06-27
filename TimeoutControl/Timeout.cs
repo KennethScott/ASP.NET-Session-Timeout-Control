@@ -30,7 +30,7 @@ namespace AjaxControls
 
         [Category("Behavior")]
         [UrlProperty]
-        [Description("URL to redirect the user, in the event of `session timeout")]
+        [Description("URL to redirect the user, in the event of session timeout")]
         public string TimeoutUrl
         {
             get { return ViewState["TimeoutUrl"] as string ?? String.Empty; }
@@ -43,6 +43,24 @@ namespace AjaxControls
         {
             get { return ViewState["CountDownSpanId"] as string ?? String.Empty; }
             set { ViewState["CountDownSpanId"] = value; }
+        }
+
+        [Description("Controls whether the embedded javascript resource is sent to the client.  If false, you must provide the javascript by some other means.")]
+        [Category("Behavior")]
+        [DefaultValue(true)]
+        public bool UseEmbeddedJavascript
+        {
+            get { return ViewState["UseEmbeddedJavascript"] as bool? ?? true; }
+            set { ViewState["UseEmbeddedJavascript"] = value; }
+        }
+
+        [Category("Behavior")]
+        [UrlProperty]
+        [Description("URL to Timeout javascript file (if not using the embedded copy).  *Can be left blank if the timeout script is already available on the page (static link, combined into another file, etc).")]
+        public string JavascriptUrl
+        {
+            get { return ViewState["JavascriptUrl"] as string ?? String.Empty; }
+            set { ViewState["JavascriptUrl"] = value; }
         }
         #endregion
 
@@ -136,8 +154,13 @@ namespace AjaxControls
                 ScriptReference reference = new ScriptReference();
 
                 if (Page != null)
-                    reference.Path = Page.ClientScript.GetWebResourceUrl(this.GetType(), "AjaxControls.Timeout.js");
-
+                {
+                    if (this.UseEmbeddedJavascript)
+                        reference.Path = Page.ClientScript.GetWebResourceUrl(this.GetType(), "AjaxControls.Timeout.js");
+                    else if (!String.IsNullOrEmpty(this.JavascriptUrl))
+                        reference.Path = this.JavascriptUrl;
+                    else return null;
+                }
                 return new ScriptReference[] { reference };
             }
             else return null;

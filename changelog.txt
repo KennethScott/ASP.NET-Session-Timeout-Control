@@ -1,3 +1,8 @@
+1.9
+---
+* Added two new server properties:  UseEmbeddedJavascript (default=true) and JavascriptUrl (default="") used to control how the required timeout
+  javascript file is sent to the client.
+
 1.8
 ---
 * Added new event OnRaisingCallbackEvent that can be subscribed to for notification of when the control's callback fires.  Example implementation
