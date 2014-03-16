@@ -1,3 +1,7 @@
+1.10
+---
+* Added code to reset session and timers on completion of any ajax calls
+
 1.9
 ---
 * Added two new server properties:  UseEmbeddedJavascript (default=true) and JavascriptUrl (default="") used to control how the required timeout

@@ -5,3 +5,11 @@ C:\Users\kenneth\Documents\Visual Studio 2010\Projects\ASP.NET Session Timeout C
 C:\Users\kenneth\Documents\Visual Studio 2010\Projects\ASP.NET Session Timeout Control\Demo\obj\Debug\Demo.pdb
 C:\Users\kenneth\Documents\Visual Studio 2010\Projects\ASP.NET Session Timeout Control\Demo\bin\AjaxControls.dll
 C:\Users\kenneth\Documents\Visual Studio 2010\Projects\ASP.NET Session Timeout Control\Demo\bin\AjaxControls.pdb
+C:\Users\kenneth\Source\Repos\ASP.NET-Session-Timeout-Control\Demo\bin\Demo.dll.config
+C:\Users\kenneth\Source\Repos\ASP.NET-Session-Timeout-Control\Demo\bin\Demo.dll
+C:\Users\kenneth\Source\Repos\ASP.NET-Session-Timeout-Control\Demo\bin\Demo.pdb
+C:\Users\kenneth\Source\Repos\ASP.NET-Session-Timeout-Control\Demo\bin\AjaxControls.dll
+C:\Users\kenneth\Source\Repos\ASP.NET-Session-Timeout-Control\Demo\bin\AjaxControls.pdb
+C:\Users\kenneth\Source\Repos\ASP.NET-Session-Timeout-Control\Demo\obj\Debug\Demo.csprojResolveAssemblyReference.cache
+C:\Users\kenneth\Source\Repos\ASP.NET-Session-Timeout-Control\Demo\obj\Debug\Demo.dll
+C:\Users\kenneth\Source\Repos\ASP.NET-Session-Timeout-Control\Demo\obj\Debug\Demo.pdb

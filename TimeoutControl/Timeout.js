@@ -73,6 +73,14 @@ AjaxControls.Timeout = function (element) {
         // make sure timers are reset on partial postbacks
         Sys.Application.add_load(Function.createDelegate(this, resetTimers));
 
+        // make sure session is reset and timers are reset on ajax requests
+        $(document).ajaxComplete(function (event, xhr, settings) {
+            // reset session
+            CallServer();
+            // reset timers
+            resetTimers();
+        });
+
         // allow any necessary one-time initialization/setup of notification
         this.setup();
     }
@@ -182,7 +190,8 @@ AjaxControls.Timeout.prototype =
     hide: function () {
         var $clientId = $("#" + this.get_clientId());
         if (typeof $clientId.dialog != 'undefined') {
-            $clientId.dialog('close');
+            if ($clientId.dialog('isOpen'))
+                $clientId.dialog('close');
         }
     },
 
