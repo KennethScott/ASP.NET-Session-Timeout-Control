@@ -8,3 +8,7 @@ C:\Users\kenneth\Source\Repos\ASP.NET-Session-Timeout-Control\TimeoutControl\bin
 C:\Users\kenneth\Source\Repos\ASP.NET-Session-Timeout-Control\TimeoutControl\obj\Debug\AjaxControls.csprojResolveAssemblyReference.cache
 C:\Users\kenneth\Source\Repos\ASP.NET-Session-Timeout-Control\TimeoutControl\obj\Debug\AjaxControls.dll
 C:\Users\kenneth\Source\Repos\ASP.NET-Session-Timeout-Control\TimeoutControl\obj\Debug\AjaxControls.pdb
+C:\DevProjects\ASP.NET-Session-Timeout-Control\TimeoutControl\bin\Debug\AjaxControls.dll
+C:\DevProjects\ASP.NET-Session-Timeout-Control\TimeoutControl\bin\Debug\AjaxControls.pdb
+C:\DevProjects\ASP.NET-Session-Timeout-Control\TimeoutControl\obj\Debug\AjaxControls.dll
+C:\DevProjects\ASP.NET-Session-Timeout-Control\TimeoutControl\obj\Debug\AjaxControls.pdb

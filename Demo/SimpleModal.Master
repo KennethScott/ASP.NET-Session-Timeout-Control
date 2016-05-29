@@ -49,7 +49,7 @@
             <span id="countDown1"></span>
             <p>Click <a href="#" onclick="$find('Timeout1').reset();">OK</a> to continue your session.</p>
 		</div>                                             
-        <ctl:Timeout ID="Timeout1" runat="server" title="Session Expiring" TimeoutUrl="~/TimeOut.aspx" CountDownSpanId="countDown1" />
+        <ctl:Timeout ID="Timeout1" runat="server" title="Session Expiring" TimeoutUrl="~/TimeOut.aspx" CountDownSpanId="countDown1" SessionRefreshUrl="~/AjaxProxy.aspx/RefreshSession" />
 
         <div class="footer">  
             Kenneth Scott              

@@ -45,7 +45,7 @@
             </div>
         </div>
                                                           
-        <ctl:Timeout ID="Timeout1" runat="server" TimeoutUrl="~/TimeOut.aspx" CountDownSpanId="countDown1">
+        <ctl:Timeout ID="Timeout1" runat="server" TimeoutUrl="~/TimeOut.aspx" CountDownSpanId="countDown1" SessionRefreshUrl="~/AjaxProxy.aspx/RefreshSession">
             <Template>
                 <div id="win" class="easyui-window" closed="true" modal="true" title="Session Expiring">
             	    <p>Your session is about to Expire.</p>

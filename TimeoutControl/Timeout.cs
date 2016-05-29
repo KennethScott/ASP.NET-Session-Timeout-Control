@@ -9,7 +9,7 @@ using System.Web.UI.WebControls;
 namespace AjaxControls
 {
     [ToolboxData("<{0}:Timeout runat=server></{0}:Timeout>")]
-    public class Timeout : WebControl, INamingContainer, IScriptControl, ICallbackEventHandler
+    public class Timeout : WebControl, INamingContainer, IScriptControl
     {
         #region Properties
         [Category("Behavior")]
@@ -62,6 +62,13 @@ namespace AjaxControls
             get { return ViewState["JavascriptUrl"] as string ?? String.Empty; }
             set { ViewState["JavascriptUrl"] = value; }
         }
+
+        [UrlProperty]
+        public string SessionRefreshUrl
+        {
+            get { return ViewState["SessionRefreshUrl"] as string ?? string.Empty; }
+            set { ViewState["SessionRefreshUrl"] = value; }
+        }
         #endregion
 
         private ScriptManager scriptManager;
@@ -94,11 +101,6 @@ namespace AjaxControls
 
                 this.Style.Add("display", "none");
 
-                string cbReference = Page.ClientScript.GetCallbackEventReference(this, "arg", "ReceiveServerData", "context");
-                string callbackScript = "function CallServer(arg,context){" + cbReference + ";}";
-
-                Page.ClientScript.RegisterClientScriptBlock(this.GetType(), "CallServer", callbackScript, true);
-
                 base.OnPreRender(e);
             }
         }
@@ -110,22 +112,6 @@ namespace AjaxControls
                 scriptManager.RegisterScriptDescriptors(this);
                 base.Render(writer);
             }
-        }
-
-        public event EventHandler RaisingCallbackEvent;
-
-        public void RaiseCallbackEvent(String eventArgument)
-        {
-            // All we're doing here is resetting session, but we'll expose the event for subscribers.
-            var e = RaisingCallbackEvent;
-            if (e != null)
-                e(this, null);
-        }
-
-        public String GetCallbackResult()
-        {
-            // return an emtpy string.  We're not really interested in the return value.
-            return String.Empty;
         }
 
         #region IScriptControl Members
@@ -141,6 +127,7 @@ namespace AjaxControls
                 descriptor.AddProperty("timeoutUrl", Page.ResolveClientUrl(this.TimeoutUrl));
                 descriptor.AddProperty("countDownSpanId", this.CountDownSpanId);
                 descriptor.AddProperty("clientId", this.ClientID);
+                descriptor.AddProperty("sessionRefreshURL", Page.ResolveClientUrl(this.SessionRefreshUrl));
                 return new ScriptDescriptor[] { descriptor };
             }
             else

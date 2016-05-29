@@ -37,7 +37,7 @@
                     <p>
                         <%= String.Format("Timeout Warning Div will display below in {0} minute(s).", Timeout1.AboutToTimeoutMinutes) %>
                     </p>
-                <ctl:Timeout ID="Timeout1" runat="server" title="Session Expiring" TimeoutUrl="~/TimeOut.aspx" CountDownSpanId="countDown1">
+                <ctl:Timeout ID="Timeout1" runat="server" title="Session Expiring" TimeoutUrl="~/TimeOut.aspx" CountDownSpanId="countDown1" SessionRefreshUrl="~/AjaxProxy.aspx/RefreshSession" >
                     <Template> 
                         <div style="border: 1px solid black; width: 300px; padding-left: 20px;">
                             <p>Your session is about to Expire.</p>

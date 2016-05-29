@@ -7,7 +7,7 @@
         Welcome to the Timeout Demo app!
     </h2>
     <p>
-        To learn more about the Timeout control, visit <a href="http://programmerramblings.blogspot.com" title="Programmer Ramblings">Programmer Ramblings</a>.
+        To learn more about the Timeout control, visit the project page on <a href="https://github.com/kennethscott/ASP.NET-Session-Timeout-Control" title="GitHub">GitHub</a>.
     </p>  
 
     <div>Wait until the warning div becomes visible and then click this Reset button to demonstrate Resetting the control externally (in this case from a content page)</div>

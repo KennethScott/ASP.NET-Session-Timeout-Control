@@ -1,3 +1,8 @@
+1.13
+---
+* Breaking changes.  Removed the old crusty Callback approach to resetting session.  It's 2016 and there is just no reason to force the current page 
+  through a full lifecycle just to refresh session.  Instead the control now requires a SessionRefreshUrl that will be called via ajax to update session.
+
 1.10
 ---
 * Added code to reset session and timers on completion of any ajax calls

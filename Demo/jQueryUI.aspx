@@ -7,7 +7,7 @@
         Welcome to the Timeout Demo app!
     </h2>
     <p>
-        To learn more about the Timeout control, visit <a href="http://programmerramblings.blogspot.com" title="Programmer Ramblings">Programmer Ramblings</a>.
+        To learn more about the Timeout control, visit the project page on <a href="https://github.com/kennethscott/ASP.NET-Session-Timeout-Control" title="GitHub">GitHub</a>.
     </p>  
     
 </asp:Content>

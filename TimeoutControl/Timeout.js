@@ -18,6 +18,7 @@ AjaxControls.Timeout = function (element) {
     var aboutToTimeoutMinutes = null;
     var timeoutUrl = null;
     var countDownSpanId = null;
+    var sessionRefreshURL = null;
 
     var clientId = null;
 
@@ -30,6 +31,13 @@ AjaxControls.Timeout = function (element) {
         // subtract one and loop back here in 1 second
         countDownSeconds -= 1;
         timerCountDown = setTimeout(countDownDelegate, 1000);
+    }
+
+    function CallServer() {
+        $.ajax({
+            global: false,
+            url: sessionRefreshURL
+        });
     }
 
     function resetTimers() {
@@ -70,8 +78,8 @@ AjaxControls.Timeout = function (element) {
         if (typeof jQuery == 'undefined')
             alert('Error:  jQuery not found.');
 
-        // make sure timers are reset on partial postbacks
-        Sys.Application.add_load(Function.createDelegate(this, resetTimers));
+        // setup timers 
+        resetTimers();
 
         // make sure session is reset and timers are reset on ajax requests
         $(document).ajaxComplete(function (event, xhr, settings) {
@@ -147,6 +155,17 @@ AjaxControls.Timeout = function (element) {
         }
     }
 
+    this.get_sessionRefreshURL = function () {
+        return sessionRefreshURL;
+    }
+
+    this.set_sessionRefreshURL = function (value) {
+        if (sessionRefreshURL !== value) {
+            sessionRefreshURL = value;
+            this.raisePropertyChanged("sessionRefreshURL");
+        }
+    }
+
     // use externally to reset timeout - use $find('whateverid').reset()
     this.reset = function () {
         // make sure notification is not visible
@@ -207,4 +226,3 @@ AjaxControls.Timeout.registerClass('AjaxControls.Timeout', Sys.UI.Control);
 if (typeof (Sys) !== 'undefined')
     Sys.Application.notifyScriptLoaded();
 
-function ReceiveServerData(rValue) { }
